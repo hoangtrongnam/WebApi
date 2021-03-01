@@ -1,0 +1,58 @@
+<div class="modal-header">
+    <h4 class="modal-title">NHẬP THÔNG TIN TẠO MỚI ẤN CHỈ QUAN TRỌNG</h4>
+    <button type="button" class="close" (click)="onClose()" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+</div>
+<div mat-dialog-content>
+    <form [formGroup]="formDanhMuc">
+        <div class="form-group">
+            <label class="control-label">Mã ACQT*</label>
+            <input class="form-control" formControlName="ma_an_chi" [ngClass]="{ 'is-invalid': submitted && MassageErrorForm.ma_an_chi.errors }" placeholder="Nhập thông tin">
+            <div *ngIf="submitted && MassageErrorForm.ma_an_chi.errors" class="invalid-feedback">
+                <div *ngIf="MassageErrorForm.ma_an_chi.errors.required">Mã ấn chỉ là bắt buộc</div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="control-label">Loại ACQT*</label>
+            <input class="form-control" formControlName="loai_acqt" [ngClass]="{ 'is-invalid': submitted && MassageErrorForm.loai_acqt.errors }" placeholder="Nhập thông tin">
+            <div *ngIf="submitted && MassageErrorForm.loai_acqt.errors" class="invalid-feedback">
+                <div *ngIf="MassageErrorForm.loai_acqt.errors.required">Loại ấn chỉ là bắt buộc</div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="control-label">Ký hiệu*</label>
+            <input class="form-control" formControlName="kyhieu" [ngClass]="{ 'is-invalid': submitted && MassageErrorForm.kyhieu.errors }" placeholder="Nhập thông tin">
+            <div *ngIf="submitted && MassageErrorForm.kyhieu.errors" class="invalid-feedback">
+                <div *ngIf="MassageErrorForm.kyhieu.errors.required">Ký hiệu ấn chỉ là bắt buộc</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Đơn vị tính*</label>
+            <input class="form-control" formControlName="donvitinh" [ngClass]="{ 'is-invalid': submitted && MassageErrorForm.donvitinh.errors }" placeholder="Nhập thông tin">
+            <div *ngIf="submitted && MassageErrorForm.donvitinh.errors" class="invalid-feedback">
+                <div *ngIf="MassageErrorForm.donvitinh.errors.required">Đơn vị ấn chỉ là bắt buộc</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Số lượng niêm phong gói*</label>
+            <input class="form-control" formControlName="sldonggoi" [ngClass]="{ 'is-invalid': submitted && MassageErrorForm.sldonggoi.errors }" placeholder="Nhập thông tin">
+            <div *ngIf="submitted && MassageErrorForm.sldonggoi.errors" class="invalid-feedback">
+                <div *ngIf="MassageErrorForm.sldonggoi.errors.required">Số lượng đóng gói ấn chỉ là bắt buộc</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Số lượng niêm phong thùng*</label>
+            <input class="form-control" formControlName="sldongthung" (keypress)="keyDownFunction($event)" [ngClass]="{ 'is-invalid': submitted && MassageErrorForm.sldongthung.errors }" placeholder="Nhập thông tin">
+            <div *ngIf="submitted && MassageErrorForm.sldongthung.errors" class="invalid-feedback">
+                <div *ngIf="MassageErrorForm.sldongthung.errors.required">Số lượng đóng thùng ấn chỉ là bắt buộc
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button id="btnSave" type="submit" class="btn btn-success waves-effect waves-light m-r-10" mwlConfirmationPopover popoverTitle="Xác Nhận" popoverMessage="Bạn chắc chắn muốn lưu thông tin này?" placement="top" cancelText="Không" confirmText="Có" (confirm)="onSave(formDanhMuc.value)"><i class="fa fa-save"></i> Lưu</button>
+    <button class="btn btn-inverse waves-effect waves-light" (click)="onClose()">Thoát</button>
+</div>

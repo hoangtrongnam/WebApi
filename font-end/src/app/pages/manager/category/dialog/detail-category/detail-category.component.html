@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h4 class="modal-title">THÔNG TIN CHI TIẾT ẤN CHỈ QUAN TRỌNG</h4>
+    <button type="button" class="close" (click)="onClose()" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body" mat-dialog-content>
+    <form [formGroup]="formDanhMuc">
+        <div class="form-group">
+            <label class="control-label col-5">Loại ACQT</label>
+            <input class="form-control col-7" formControlName="loai_acqt" disabled>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-5">Ký hiệu</label>
+            <input class="form-control col-7" formControlName="kyhieu" disabled>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-5">Đơn vị tính</label>
+            <input class="form-control col-7" formControlName="donvitinh" disabled>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-5">Số lượng niêm phong gói</label>
+            <input class="form-control col-7" formControlName="sldonggoi" disabled>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-5">Số lượng niêm phong thùng</label>
+            <input class="form-control col-7" formControlName="sldongthung" disabled>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-inverse waves-effect waves-light" (click)="onClose()">Thoát</button>
+</div>

@@ -1,0 +1,10 @@
+@media (min-width: 1000px) {
+    .modal-xl {
+        max-width: 540px;
+    }
+}
+
+.modal-title {
+    color: rgb(6, 138, 199);
+    font-weight: bold;
+}
