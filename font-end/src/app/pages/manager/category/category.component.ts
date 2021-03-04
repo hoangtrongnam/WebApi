@@ -6,7 +6,6 @@ import { QRCodeService } from './services';
 import { MatDialog } from '@angular/material/dialog';
 import { EditCategoryComponent, DetailCategoryComponent, CreateCategoryComponent } from './dialog';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CreatePackageComponent } from '../tally/package';
 import { DataTablesModule } from 'angular-datatables';
 import { Subject, Observable, of } from 'rxjs';
 import { OrderPipe } from 'ngx-order-pipe';
@@ -140,18 +139,6 @@ export class CategoryComponent implements OnInit {
   }
 
   async createGoiACQT(item) {
-    var cbACQT = await this.categoryService.GetListCategory();
-    const dialogRef = this.dialog.open(CreatePackageComponent, {
-      width: '600px',
-      data: { 
-        action: "Thêm mới", 
-        category: item
-      }
-    });
-    
-    dialogRef.afterClosed().subscribe(result => {
-      this.initData();
-    });
   }
   async createBox(item){
     this.returnUrl = await this.route.snapshot.queryParams['returnUrl'] || '/tally/box_close';
