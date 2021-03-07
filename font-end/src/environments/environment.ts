@@ -7,7 +7,7 @@ export const environment = {
   // apiUrl: 'https://iis-uat2.scb.com.vn/barcode_api_phase2/api'
   //apiUrl: 'https://iis1-vhud.scb.com.vn/barcode_phase2_api/api'
   // apiUrl: 'https://qlac-api.scb.com.vn/api'
-  apiUrl: 'http://localhost:55771/api'
+  apiUrl: 'http://localhost:5001/api/v1'
 };
 
 /*
