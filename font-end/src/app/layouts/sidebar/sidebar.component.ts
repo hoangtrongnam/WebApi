@@ -25,15 +25,15 @@ export class SidebarComponent implements OnInit {
       {
         "id": "10",
         "parentid": null,
-        "name": " Quản lý cá nhân",
+        "name": "Thiết bị điện",
         "url": "/",
         "icon": "mdi mdi-account menu-icon",
         "menus": [
           {
             "id": "1",
             "parentid": "10",
-            "name": "Cá nhân",
-            "url": "/mana-personal/personal",
+            "name": "Ifm",
+            "url": "/product",
             "menus": [],
             "actionids": null,
             "actions": null,
@@ -54,7 +54,7 @@ export class SidebarComponent implements OnInit {
       {
         "id": "11",
         "parentid": null,
-        "name": "Quản lý tổ chức",
+        "name": "Gia công cơ khí",
         "url": "/",
         "icon": "mdi mdi-account-multiple-plus menu-icon",
         "menus": [
