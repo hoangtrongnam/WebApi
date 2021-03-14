@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hBwvM++ApaCFejke+PCEaTFAS4A/LOq4lzjeNhkytCc3ZL7OmpRW6WdbfKFly+vTsa3leYzt0dH4l78YMCgESg==",
+  "dgSpecHash": "pQcsrnMDXKV77YVtle1HjU8DpKmUw3IxffnsARKgPVMu/ikefgQ7xdeE5gSRd1YpXUaT320WPe1i5KB5mkQ3uA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\namco\\source\\repos\\WebApi\\WebApi.csproj",
+  "projectFilePath": "D:\\source\\Angular\\WebApi\\back-end\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\namco\\.nuget\\packages\\aspose.cells\\21.1.0\\aspose.cells.21.1.0.nupkg.sha512",
     "C:\\Users\\namco\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.1\\microsoft.aspnetcore.authentication.jwtbearer.3.1.1.nupkg.sha512",

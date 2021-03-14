@@ -78,6 +78,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/customer/customer.component.html":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/customer/customer.component.html ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"main-wrapper\">\r\n    <header app-header class=\"topbar\"></header>\r\n    <aside app-sidebar class=\"left-sidebar\"></aside>\r\n\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"container-fluid\">\r\n            <app-breadcrumb></app-breadcrumb>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n        <app-footer></app-footer>\r\n    </div>\r\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/customer-page/product/product.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/customer-page/product/product.component.html ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row page-titles\">\r\n    <div class=\"col-md-5 col-8 align-self-center\">\r\n        <h3 class=\"text-themecolor m-b-0 m-t-0\">Quản Lý Ấn Chỉ & Ấn Phẩm</h3>\r\n        <ol class=\"breadcrumb\">\r\n            <li class=\"breadcrumb-item\"><a href=\"javascript:void(0)\">Kiểm Đếm</a></li>\r\n            <li class=\"breadcrumb-item active\">Danh Mục</li>\r\n        </ol>\r\n    </div>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-12\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h4 class=\"card-title\">DANH SÁCH DANH MỤC ACQT\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-4 text-right\">\r\n                        <div id=\"myTable_filter\" class=\"dataTables_filter\">\r\n                            <label>\r\n                          \r\n                        </label>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                \r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/footer/footer.component.html":
 /*!******************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/footer/footer.component.html ***!
@@ -3220,9 +3246,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _services_custom_preloading_strategy_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @_services/custom-preloading-strategy.service */ "./src/app/_services/custom-preloading-strategy.service.ts");
-/* harmony import */ var _pages_login_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/login/login.component */ "./src/app/pages/login/login.component.ts");
-/* harmony import */ var _layouts_admin_admin_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/layouts/admin/admin.component */ "./src/app/layouts/admin/admin.component.ts");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_helpers */ "./src/app/_helpers/index.ts");
+/* harmony import */ var _pages_customer_page_product_product_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/customer-page/product/product.component */ "./src/app/pages/customer-page/product/product.component.ts");
+/* harmony import */ var _layouts_customer_customer_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layouts/customer/customer.component */ "./src/app/layouts/customer/customer.component.ts");
 
 
 
@@ -3230,23 +3255,37 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 //set preload: true for loading after appModule
 const routes = [
+    // {
+    //   path: 'customer',
+    //   component: AdminComponent,
+    //   children: [
+    //     {
+    //       path: '**',
+    //       // canActivate: [AuthGuard],
+    //       loadChildren: () => import('@pages/manager/manager.module').then(m => m.ManagerModule), data: { preload: true }
+    //     }
+    //   ]
+    // },
+    // {
+    //   path: 'login',
+    //   component: LoginComponent
+    // },
+    {
+        path: 'product',
+        component: _pages_customer_page_product_product_component__WEBPACK_IMPORTED_MODULE_4__["ProductComponent"]
+    },
     {
         path: '',
-        component: _layouts_admin_admin_component__WEBPACK_IMPORTED_MODULE_5__["AdminComponent"],
+        component: _layouts_customer_customer_component__WEBPACK_IMPORTED_MODULE_5__["CustomerComponent"],
         children: [
             {
                 path: '',
-                canActivate: [_helpers__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]],
-                loadChildren: () => __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! @pages/manager/manager.module */ "./src/app/pages/manager/manager.module.ts")).then(m => m.ManagerModule), data: { preload: true }
+                //canActivate: [AuthGuard],
+                loadChildren: () => __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! @/pages/customer-page/customer.module */ "./src/app/pages/customer-page/customer.module.ts")).then(m => m.CustomerModule), data: { preload: true }
             }
         ]
-    },
-    {
-        path: 'login',
-        component: _pages_login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"]
     },
     {
         path: '**',
@@ -3379,6 +3418,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ng2_currency_mask_src_currency_mask_config__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ng2-currency-mask/src/currency-mask.config */ "./node_modules/ng2-currency-mask/src/currency-mask.config.js");
 /* harmony import */ var ng2_currency_mask_src_currency_mask_config__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(ng2_currency_mask_src_currency_mask_config__WEBPACK_IMPORTED_MODULE_25__);
 /* harmony import */ var ngx_loading__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ngx-loading */ "./node_modules/ngx-loading/fesm2015/ngx-loading.js");
+/* harmony import */ var _pages_customer_page_product_product_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pages/customer-page/product/product.component */ "./src/app/pages/customer-page/product/product.component.ts");
+
 
 
 
@@ -3430,6 +3471,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
             _pages_login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"],
+            _pages_customer_page_product_product_component__WEBPACK_IMPORTED_MODULE_27__["ProductComponent"],
             _pages_header_header_component__WEBPACK_IMPORTED_MODULE_18__["HeaderComponent"],
             _pages_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_19__["SidebarComponent"],
             _pages_footer_footer_component__WEBPACK_IMPORTED_MODULE_20__["FooterComponent"],
@@ -3529,6 +3571,117 @@ AdminComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./admin.component.css */ "./src/app/layouts/admin/admin.component.css")).default]
     })
 ], AdminComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/layouts/customer/customer.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/layouts/customer/customer.component.css ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xheW91dHMvY3VzdG9tZXIvY3VzdG9tZXIuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/layouts/customer/customer.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/layouts/customer/customer.component.ts ***!
+  \********************************************************/
+/*! exports provided: CustomerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerComponent", function() { return CustomerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/_helpers */ "./src/app/_helpers/index.ts");
+
+
+
+let CustomerComponent = class CustomerComponent {
+    constructor() {
+    }
+    ngOnInit() {
+    }
+    ngAfterViewInit() {
+        _helpers__WEBPACK_IMPORTED_MODULE_2__["Template"].initPage();
+        _helpers__WEBPACK_IMPORTED_MODULE_2__["Template"].initLayout();
+    }
+};
+CustomerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-customer',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./customer.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/customer/customer.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./customer.component.css */ "./src/app/layouts/customer/customer.component.css")).default]
+    })
+], CustomerComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/customer-page/product/product.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/pages/customer-page/product/product.component.css ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2N1c3RvbWVyLXBhZ2UvcHJvZHVjdC9wcm9kdWN0LmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/pages/customer-page/product/product.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/pages/customer-page/product/product.component.ts ***!
+  \******************************************************************/
+/*! exports provided: ProductComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductComponent", function() { return ProductComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/_services */ "./src/app/_services/index.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let ProductComponent = class ProductComponent {
+    constructor(notifierService, router, route) {
+        this.notifierService = notifierService;
+        this.router = router;
+        this.route = route;
+    }
+    ngOnInit() {
+        this.initData();
+    }
+    initData() {
+    }
+};
+ProductComponent.ctorParameters = () => [
+    { type: _services__WEBPACK_IMPORTED_MODULE_2__["NotifierService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+];
+ProductComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-product',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./product.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/customer-page/product/product.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./product.component.css */ "./src/app/pages/customer-page/product/product.component.css")).default]
+    })
+], ProductComponent);
 
 
 
@@ -3840,7 +3993,7 @@ const environment = {
     // apiUrl: 'https://iis-uat2.scb.com.vn/barcode_api_phase2/api'
     //apiUrl: 'https://iis1-vhud.scb.com.vn/barcode_phase2_api/api'
     // apiUrl: 'https://qlac-api.scb.com.vn/api'
-    apiUrl: 'http://localhost:55771/api'
+    apiUrl: 'http://localhost:5001/api/v1'
 };
 /*
  * In development mode, to ignore zone related error stack frames such as

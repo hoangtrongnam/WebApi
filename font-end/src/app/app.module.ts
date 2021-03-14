@@ -20,16 +20,18 @@ import { ConfirmModalModule } from '@_components/confirm-modal/confirm-modal.mod
 import { AlertModule } from '@_components/alert/alert.module';
 import { BreadcrumbModule } from '@_components/breadcrumb/breadcrumb.module';
 
-import { LoginComponent } from './pages/login/login.component';
-import { HeaderComponent } from './pages/header/header.component';
-import { SidebarComponent } from './pages/sidebar/sidebar.component';
-import { FooterComponent } from './pages/footer/footer.component';
+import { LoginComponent } from './layouts/admin/login/login.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
+import { FooterComponent } from './layouts/footer/footer.component';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { HeaderInterceptor } from './_helpers/headers.interceptor';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { DirectionsMapDirective } from './_helpers/directions-map.directive';
 import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG  } from 'ng2-currency-mask/src/currency-mask.config';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
+// import { ProductComponent } from './pages/customer-page/product/product.component';
+import { CustomerComponent } from './layouts/customer/customer.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: "right",
@@ -53,11 +55,13 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     LoginComponent,
+    // ProductComponent,
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
     DirectionsMapDirective,
-    AdminComponent
+    AdminComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\namco\\source\\repos\\WebApi\\WebApi.csproj": {}
+    "D:\\source\\Angular\\WebApi\\back-end\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\namco\\source\\repos\\WebApi\\WebApi.csproj": {
+    "D:\\source\\Angular\\WebApi\\back-end\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\namco\\source\\repos\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "D:\\source\\Angular\\WebApi\\back-end\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\namco\\source\\repos\\WebApi\\WebApi.csproj",
+        "projectPath": "D:\\source\\Angular\\WebApi\\back-end\\WebApi.csproj",
         "packagesPath": "C:\\Users\\namco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\namco\\source\\repos\\WebApi\\obj\\",
+        "outputPath": "D:\\source\\Angular\\WebApi\\back-end\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\namco\\AppData\\Roaming\\NuGet\\NuGet.Config",

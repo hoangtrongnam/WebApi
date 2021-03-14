@@ -6981,781 +6981,10 @@ NgxSpinnerModule.decorators = [
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/category.component.html":
-/*!******************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/category.component.html ***!
-  \******************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row page-titles\">\r\n    <div class=\"col-md-5 col-8 align-self-center\">\r\n        <h3 class=\"text-themecolor m-b-0 m-t-0\">Quản Lý Ấn Chỉ & Ấn Phẩm</h3>\r\n        <ol class=\"breadcrumb\">\r\n            <li class=\"breadcrumb-item\"><a href=\"javascript:void(0)\">Kiểm Đếm</a></li>\r\n            <li class=\"breadcrumb-item active\">Danh Mục</li>\r\n        </ol>\r\n    </div>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-12\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h4 class=\"card-title\">DANH SÁCH DANH MỤC ACQT\r\n                </h4>\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-8 text-left\">\r\n                        <!-- <button type=\"button\" class=\"btn btn-outline-success btn-rounded waves-effect waves-light m-r-10\" (click)=\"createCategory()\"><i class=\"fa fa-plus\"></i> Tạo danh mục mới</button> -->\r\n                        <button type=\"button\" class=\"btn btn-outline-info btn-rounded waves-effect waves-light m-r-10\" (click)=\"editCategory()\"><i class=\"fa fa-edit\"></i> Chỉnh sửa</button>\r\n                        <button type=\"button\" class=\"btn btn-outline-info btn-rounded waves-effect waves-light m-r-10\" (click)=\"onDetailCategory()\"><i class=\"fa fa-link\"></i> Xem chi tiết</button>\r\n                    </div>\r\n                    <div class=\"col-md-4 text-right\">\r\n                        <div id=\"myTable_filter\" class=\"dataTables_filter\">\r\n                            <label>\r\n                          <input type=\"search\" class=\"form-control form-control-sm\" placeholder=\"Tìm kiếm\"\r\n                            aria-controls=\"myTable\" [(ngModel)]=\"term\">\r\n                        </label>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"table-responsive\">\r\n                    <table class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\" *ngIf=\"this.temp_var\">\r\n                        <thead>\r\n                            <tr>\r\n                                <th>STT</th>\r\n                                <th>Chọn</th>\r\n                                <th [class.active]=\"order === 'loai_acqt'\" (click)=\"setOrder('loai_acqt')\" class=\"mdl-data-table__cell--non-numeric\">Loại\r\n                                    <span [hidden]=\"reverse\">▼</span><span [hidden]=\"!reverse\">▲</span>\r\n                                </th>\r\n                                <th [class.active]=\"order === 'kyhieu'\" (click)=\"setOrder('kyhieu')\">Ký hiệu\r\n                                    <span [hidden]=\"reverse\">▼</span><span [hidden]=\"!reverse\">▲</span>\r\n                                </th>\r\n                                <th [class.active]=\"order === 'donvitinh'\" (click)=\"setOrder('donvitinh')\">Đơn vị tính\r\n                                    <span [hidden]=\"reverse\">▼</span><span [hidden]=\"!reverse\">▲</span>\r\n                                </th>\r\n                                <th [class.active]=\"order === 'sldonggoi'\" (click)=\"setOrder('sldonggoi')\">Số lượng gói\r\n                                    <span [hidden]=\"reverse\">▼</span><span [hidden]=\"!reverse\">▲</span>\r\n                                </th>\r\n                                <th [class.active]=\"order === 'sldongthung'\" (click)=\"setOrder('sldongthung')\">Số lượng thùng\r\n                                    <span [hidden]=\"reverse\">▼</span><span [hidden]=\"!reverse\">▲</span>\r\n                                </th>\r\n                            </tr>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr *ngFor=\"let item of data | orderBy: order:reverse |filter:term;index as i\">\r\n                                <td>{{indexPa + 1 + i}}</td>\r\n                                <td>\r\n                                    <mat-radio-button class=\"example-radio-button\" [value]=\"item?.rid\" (change)=\"onSelectionHandle(item)\">\r\n                                    </mat-radio-button>\r\n                                </td>\r\n                                <td style=\"white-space:pre-wrap !important\">{{item.loai_acqt}}</td>\r\n                                <td><span class=\"text-muted\"><i class=\"fa fa-clock-o\"></i>{{item.kyhieu}}</span>\r\n                                </td>\r\n                                <td>{{item.donvitinh}}</td>\r\n                                <td>{{item.sldonggoi}}</td>\r\n                                <td>{{item.sldongthung}}</td>\r\n                            </tr>\r\n                            <tr class=\"no-data\" [hidden]=\"!checkHideText() || loading\">\r\n                                <td colspan=\"7\" style=\"text-align: center;color: rgb(172, 172, 172);font-weight: bold;font-style: italic;\">Không có dữ liệu hiển thị</td>\r\n                            </tr>\r\n                        </tbody>\r\n                        <div class=\"spinner-container\" [hidden]=\"!loading\">\r\n                            <mat-spinner diameter=\"60\"></mat-spinner>\r\n                        </div>\r\n                    </table>\r\n                </div>\r\n                <mat-paginator *ngIf=\"totalrow!== 0\" [length]=\"totalrow\" [pageSize]=\"pageSize\" [pageSizeOptions]=\"[5, 10, 25, 50, 100]\" (page)=\"pageEvent($event)\">\r\n                </mat-paginator>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!-- <ng-template #customLoadingTemplate>\r\n</ng-template>\r\n\r\n<ngx-loading [show]=\"loading\" [config]=\"{ fullScreenBackdrop: true }\" [template]=\"customLoadingTemplate\">\r\n</ngx-loading> -->");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/dialog/create-category/create-category.component.html":
-/*!************************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/dialog/create-category/create-category.component.html ***!
-  \************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">NHẬP THÔNG TIN TẠO MỚI ẤN CHỈ QUAN TRỌNG</h4>\r\n    <button type=\"button\" class=\"close\" (click)=\"onClose()\" aria-label=\"Close\"><span\r\n            aria-hidden=\"true\">&times;</span></button>\r\n</div>\r\n<div mat-dialog-content>\r\n    <form [formGroup]=\"formDanhMuc\">\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Mã ACQT*</label>\r\n            <input class=\"form-control\" formControlName=\"ma_an_chi\" [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.ma_an_chi.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.ma_an_chi.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.ma_an_chi.errors.required\">Mã ấn chỉ là bắt buộc</div>\r\n            </div>\r\n\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Loại ACQT*</label>\r\n            <input class=\"form-control\" formControlName=\"loai_acqt\" [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.loai_acqt.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.loai_acqt.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.loai_acqt.errors.required\">Loại ấn chỉ là bắt buộc</div>\r\n            </div>\r\n\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Ký hiệu*</label>\r\n            <input class=\"form-control\" formControlName=\"kyhieu\" [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.kyhieu.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.kyhieu.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.kyhieu.errors.required\">Ký hiệu ấn chỉ là bắt buộc</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Đơn vị tính*</label>\r\n            <input class=\"form-control\" formControlName=\"donvitinh\" [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.donvitinh.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.donvitinh.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.donvitinh.errors.required\">Đơn vị ấn chỉ là bắt buộc</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Số lượng niêm phong gói*</label>\r\n            <input class=\"form-control\" formControlName=\"sldonggoi\" [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.sldonggoi.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.sldonggoi.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.sldonggoi.errors.required\">Số lượng đóng gói ấn chỉ là bắt buộc</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Số lượng niêm phong thùng*</label>\r\n            <input class=\"form-control\" formControlName=\"sldongthung\" (keypress)=\"keyDownFunction($event)\" [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.sldongthung.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.sldongthung.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.sldongthung.errors.required\">Số lượng đóng thùng ấn chỉ là bắt buộc\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>\r\n<div class=\"modal-footer\">\r\n    <button id=\"btnSave\" type=\"submit\" class=\"btn btn-success waves-effect waves-light m-r-10\" mwlConfirmationPopover popoverTitle=\"Xác Nhận\" popoverMessage=\"Bạn chắc chắn muốn lưu thông tin này?\" placement=\"top\" cancelText=\"Không\" confirmText=\"Có\" (confirm)=\"onSave(formDanhMuc.value)\"><i class=\"fa fa-save\"></i> Lưu</button>\r\n    <button class=\"btn btn-inverse waves-effect waves-light\" (click)=\"onClose()\">Thoát</button>\r\n</div>");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/dialog/detail-category/detail-category.component.html":
-/*!************************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/dialog/detail-category/detail-category.component.html ***!
-  \************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">THÔNG TIN CHI TIẾT ẤN CHỈ QUAN TRỌNG</h4>\r\n    <button type=\"button\" class=\"close\" (click)=\"onClose()\" aria-label=\"Close\"><span\r\n            aria-hidden=\"true\">&times;</span></button>\r\n</div>\r\n<div class=\"modal-body\" mat-dialog-content>\r\n    <form [formGroup]=\"formDanhMuc\">\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label col-5\">Loại ACQT</label>\r\n            <input class=\"form-control col-7\" formControlName=\"loai_acqt\" disabled>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label col-5\">Ký hiệu</label>\r\n            <input class=\"form-control col-7\" formControlName=\"kyhieu\" disabled>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label col-5\">Đơn vị tính</label>\r\n            <input class=\"form-control col-7\" formControlName=\"donvitinh\" disabled>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label col-5\">Số lượng niêm phong gói</label>\r\n            <input class=\"form-control col-7\" formControlName=\"sldonggoi\" disabled>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label col-5\">Số lượng niêm phong thùng</label>\r\n            <input class=\"form-control col-7\" formControlName=\"sldongthung\" disabled>\r\n        </div>\r\n    </form>\r\n</div>\r\n<div class=\"modal-footer\">\r\n    <button type=\"submit\" class=\"btn btn-inverse waves-effect waves-light\" (click)=\"onClose()\">Thoát</button>\r\n</div>");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/dialog/edit-category/edit-category.component.html":
-/*!********************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/dialog/edit-category/edit-category.component.html ***!
-  \********************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">NHẬP THÔNG TIN CẬP NHẬT ẤN CHỈ QUAN TRỌNG</h4>\r\n    <button type=\"button\" class=\"close\" (click)=\"onClose()\" aria-label=\"Close\"><span\r\n            aria-hidden=\"true\">&times;</span></button>\r\n</div>\r\n<div mat-dialog-content>\r\n    <form [formGroup]=\"formDanhMuc\">\r\n\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Loại ACQT</label>\r\n            <input class=\"form-control\" formControlName=\"loai_acqt\" disabled [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.loai_acqt.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.loai_acqt.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.loai_acqt.errors.required\">Loại ấn chỉ là bắt buộc</div>\r\n            </div>\r\n\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Ký hiệu</label>\r\n            <input class=\"form-control\" formControlName=\"kyhieu\" disabled [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.kyhieu.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.kyhieu.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.kyhieu.errors.required\">Ký hiệu ấn chỉ là bắt buộc</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Đơn vị tính</label>\r\n            <input class=\"form-control\" formControlName=\"donvitinh\" disabled [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.donvitinh.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.donvitinh.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.donvitinh.errors.required\">Đơn vị ấn chỉ là bắt buộc</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Số lượng niêm phong gói</label>\r\n            <input class=\"form-control\" formControlName=\"sldonggoi\" (keypress)=\"keyDownFunction($event)\" [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.sldonggoi.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.sldonggoi.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.sldonggoi.errors.required\">Số lượng đóng gói ấn chỉ là bắt buộc</div>\r\n                <div *ngIf=\"MassageErrorForm.sldonggoi.errors.validateNumberOf\">Vui lòng chỉ nhập số</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\">Số lượng niêm phong thùng</label>\r\n            <input class=\"form-control\" formControlName=\"sldongthung\" (keypress)=\"keyDownFunction($event)\" [ngClass]=\"{ 'is-invalid': submitted && MassageErrorForm.sldongthung.errors }\" placeholder=\"Nhập thông tin\">\r\n            <div *ngIf=\"submitted && MassageErrorForm.sldongthung.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"MassageErrorForm.sldongthung.errors.required\">Số lượng đóng thùng ấn chỉ là bắt buộc\r\n                </div>\r\n                <div *ngIf=\"MassageErrorForm.sldongthung.errors.validateNumberOf\">Vui lòng chỉ nhập số </div>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>\r\n<div class=\"modal-footer\">\r\n    <button id=\"btnSave\" type=\"submit\" class=\"btn btn-success waves-effect waves-light m-r-10\" mwlConfirmationPopover popoverTitle=\"Xác Nhận\" popoverMessage=\"Bạn chắc chắn muốn lưu thông tin này?\" placement=\"top\" cancelText=\"Không\" confirmText=\"Có\" (confirm)=\"onSave(formDanhMuc.value)\"><i class=\"fa fa-save\"></i> Cập nhật</button>\r\n    <button class=\"btn btn-inverse waves-effect waves-light\" (click)=\"onClose()\">Thoát</button>\r\n</div>");
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/category.component.css":
-/*!***************************************************************!*\
-  !*** ./src/app/pages/manager/category/category.component.css ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("@media (min-width: 1000px) {\r\n    .modal-xl {\r\n        max-width: 540px;\r\n    }\r\n}\r\n\r\n.text-themecolor {\r\n    font-size: 120%;\r\n    color: rgb(6, 138, 199) !important;\r\n}\r\n\r\n.breadcrumb-item a {\r\n    color: rgb(6, 138, 199) !important;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-title {\r\n    color: rgb(6, 138, 199);\r\n    font-weight: bold;\r\n}\r\n\r\ntable {\r\n    counter-reset: tableCount;\r\n}\r\n\r\n.counterCell:before {\r\n    content: counter(tableCount);\r\n    counter-increment: tableCount;\r\n}\r\n\r\nthead {\r\n    background-color: #62aef9;\r\n}\r\n\r\nthead th {\r\n    cursor: pointer;\r\n    margin-right: 15px;\r\n    margin-left: 15px;\r\n    color: white;\r\n}\r\n\r\nthead th span {\r\n    visibility: hidden;\r\n}\r\n\r\nthead th.active {\r\n    color: rgb(213, 216, 219);\r\n}\r\n\r\nthead th.active span {\r\n    visibility: visible;\r\n}\r\n\r\n.btn-outline-success,\r\n.btn-outline-info {\r\n    border: 2px solid;\r\n    font-size: 13px;\r\n}\r\n\r\n.spinner-container {\r\n    position: absolute;\r\n    top: 95px;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    z-index: 1;\r\n    display: -webkit-box;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n            justify-content: center;\r\n}\r\n\r\n.table-responsive {\r\n    min-height: 160px;\r\n    background-color: #fff;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbWFuYWdlci9jYXRlZ29yeS9jYXRlZ29yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0k7UUFDSSxnQkFBZ0I7SUFDcEI7QUFDSjs7QUFFQTtJQUNJLGVBQWU7SUFDZixrQ0FBa0M7QUFDdEM7O0FBRUE7SUFDSSxrQ0FBa0M7SUFDbEMsaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksdUJBQXVCO0lBQ3ZCLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFFQTtJQUNJLDRCQUE0QjtJQUM1Qiw2QkFBNkI7QUFDakM7O0FBRUE7SUFDSSx5QkFBeUI7QUFDN0I7O0FBRUE7SUFDSSxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLGlCQUFpQjtJQUNqQixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0kseUJBQXlCO0FBQzdCOztBQUVBO0lBQ0ksbUJBQW1CO0FBQ3ZCOztBQUVBOztJQUVJLGlCQUFpQjtJQUNqQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFNBQVM7SUFDVCxPQUFPO0lBQ1AsUUFBUTtJQUNSLFNBQVM7SUFDVCxVQUFVO0lBQ1Ysb0JBQWE7SUFBYixhQUFhO0lBQ2IseUJBQW1CO1lBQW5CLG1CQUFtQjtJQUNuQix3QkFBdUI7WUFBdkIsdUJBQXVCO0FBQzNCOztBQUNBO0lBQ0ksaUJBQWlCO0lBQ2pCLHNCQUFzQjtBQUMxQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL21hbmFnZXIvY2F0ZWdvcnkvY2F0ZWdvcnkuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBtZWRpYSAobWluLXdpZHRoOiAxMDAwcHgpIHtcclxuICAgIC5tb2RhbC14bCB7XHJcbiAgICAgICAgbWF4LXdpZHRoOiA1NDBweDtcclxuICAgIH1cclxufVxyXG5cclxuLnRleHQtdGhlbWVjb2xvciB7XHJcbiAgICBmb250LXNpemU6IDEyMCU7XHJcbiAgICBjb2xvcjogcmdiKDYsIDEzOCwgMTk5KSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uYnJlYWRjcnVtYi1pdGVtIGEge1xyXG4gICAgY29sb3I6IHJnYig2LCAxMzgsIDE5OSkgIWltcG9ydGFudDtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG4uY2FyZC10aXRsZSB7XHJcbiAgICBjb2xvcjogcmdiKDYsIDEzOCwgMTk5KTtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG50YWJsZSB7XHJcbiAgICBjb3VudGVyLXJlc2V0OiB0YWJsZUNvdW50O1xyXG59XHJcblxyXG4uY291bnRlckNlbGw6YmVmb3JlIHtcclxuICAgIGNvbnRlbnQ6IGNvdW50ZXIodGFibGVDb3VudCk7XHJcbiAgICBjb3VudGVyLWluY3JlbWVudDogdGFibGVDb3VudDtcclxufVxyXG5cclxudGhlYWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzYyYWVmOTtcclxufVxyXG5cclxudGhlYWQgdGgge1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbnRoZWFkIHRoIHNwYW4ge1xyXG4gICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG59XHJcblxyXG50aGVhZCB0aC5hY3RpdmUge1xyXG4gICAgY29sb3I6IHJnYigyMTMsIDIxNiwgMjE5KTtcclxufVxyXG5cclxudGhlYWQgdGguYWN0aXZlIHNwYW4ge1xyXG4gICAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxufVxyXG5cclxuLmJ0bi1vdXRsaW5lLXN1Y2Nlc3MsXHJcbi5idG4tb3V0bGluZS1pbmZvIHtcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkO1xyXG4gICAgZm9udC1zaXplOiAxM3B4O1xyXG59XHJcblxyXG4uc3Bpbm5lci1jb250YWluZXIge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiA5NXB4O1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG4gICAgei1pbmRleDogMTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuLnRhYmxlLXJlc3BvbnNpdmUge1xyXG4gICAgbWluLWhlaWdodDogMTYwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG59Il19 */");
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/category.component.ts":
-/*!**************************************************************!*\
-  !*** ./src/app/pages/manager/category/category.component.ts ***!
-  \**************************************************************/
-/*! exports provided: CategoryComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryComponent", function() { return CategoryComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/_services */ "./src/app/_services/index.ts");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services */ "./src/app/pages/manager/category/services/index.ts");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
-/* harmony import */ var _dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dialog */ "./src/app/pages/manager/category/dialog/index.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/fesm2015/ngx-order-pipe.js");
-
-
-
-
-
-
-
-
-let CategoryComponent = class CategoryComponent {
-    constructor(categoryVMService, categoryService, notifierService, dialog, router, route, orderPipe) {
-        this.categoryVMService = categoryVMService;
-        this.categoryService = categoryService;
-        this.notifierService = notifierService;
-        this.dialog = dialog;
-        this.router = router;
-        this.route = route;
-        this.orderPipe = orderPipe;
-        this.pageSize = 2000;
-        this.pageIndex = 0;
-        this.temp_var = false;
-        this.order = 'loai_acqt';
-        this.reverse = true;
-        this.loading = false;
-        this.indexPa = 0;
-        this.checkLoad = false;
-    }
-    ngOnInit() {
-        this.initData();
-        this.sortedCollection = this.orderPipe.transform(this.data, 'loai_acqt');
-    }
-    setOrder(value) {
-        if (this.order === value) {
-            this.reverse = !this.reverse;
-        }
-        this.order = value;
-    }
-    initData() {
-        this.loading = true;
-        this.checkLoad = false;
-        this.itemCheckHandle = '';
-        this.totalrow = 0;
-        const request = {
-            sizePage: this.pageSize,
-            currentPage: this.pageIndex
-        };
-        this.categoryVMService.GetAllCategory_VM(request)
-            .subscribe(data => {
-            this.loading = false;
-            this.data = data.category;
-            this.totalrow = data.totalrow;
-            this.temp_var = true;
-        });
-    }
-    pageEvent(event) {
-        this.indexPa = 0;
-        this.loading = true;
-        const request = {
-            sizePage: event.pageSize,
-            currentPage: event.pageIndex
-        };
-        this.categoryVMService.GetAllCategory_VM(request)
-            .subscribe(data => {
-            this.loading = false;
-            this.data = data.category;
-            this.totalrow = data.totalrow;
-            this.indexPa += (event.pageSize * event.pageIndex);
-            this.temp_var = true;
-        });
-    }
-    checkHideText() {
-        if (this.data && this.data.length > 0) {
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
-    createCategory() {
-        const dialogRef = this.dialog.open(_dialog__WEBPACK_IMPORTED_MODULE_5__["CreateCategoryComponent"], {
-            width: '600px',
-            data: {}
-        });
-        dialogRef.afterClosed().subscribe(result => {
-            this.initData();
-        });
-    }
-    onSelectionHandle(item) {
-        this.itemCheckHandle = item;
-    }
-    editCategory() {
-        if (this.itemCheckHandle === '') {
-            this.notifierService.warning("Thông báo", "Vui lòng chọn ít nhất 1 danh mục để cập nhật!");
-            return;
-        }
-        const dialogRef = this.dialog.open(_dialog__WEBPACK_IMPORTED_MODULE_5__["EditCategoryComponent"], {
-            width: '600px',
-            data: {
-                danhmuc_id: this.itemCheckHandle.danhmuc_id,
-                loai_acqt: this.itemCheckHandle.loai_acqt,
-                kyhieu: this.itemCheckHandle.kyhieu,
-                donvitinh: this.itemCheckHandle.donvitinh,
-                sldonggoi: this.itemCheckHandle.sldonggoi,
-                sldongthung: this.itemCheckHandle.sldongthung,
-                status: this.itemCheckHandle.status,
-                action: "Cập nhật"
-            }
-        });
-        dialogRef.afterClosed().subscribe(result => {
-            this.initData();
-        });
-    }
-    createGoiACQT(item) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-        });
-    }
-    createBox(item) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            this.returnUrl = (yield this.route.snapshot.queryParams['returnUrl']) || '/tally/box_close';
-            this.router.navigate([this.returnUrl], { queryParams: { danhmuc_id: item.danhmuc_id, loai_acqt: item.loai_acqt } });
-        });
-    }
-    onDetailCategory() {
-        if (this.itemCheckHandle === '') {
-            this.notifierService.warning("Thông báo", "Vui lòng chọn ít nhất 1 danh mục để xem chi tiết!");
-            return;
-        }
-        const dialogRef = this.dialog.open(_dialog__WEBPACK_IMPORTED_MODULE_5__["DetailCategoryComponent"], {
-            width: '600px',
-            data: {
-                danhmuc_id: this.itemCheckHandle.danhmuc_id,
-                loai_acqt: this.itemCheckHandle.loai_acqt,
-                kyhieu: this.itemCheckHandle.kyhieu,
-                donvitinh: this.itemCheckHandle.donvitinh,
-                sldonggoi: this.itemCheckHandle.sldonggoi,
-                sldongthung: this.itemCheckHandle.sldongthung,
-                status: this.itemCheckHandle.status
-            }
-        });
-        dialogRef.afterClosed().subscribe(result => {
-            this.initData();
-        });
-    }
-};
-CategoryComponent.ctorParameters = () => [
-    { type: _services__WEBPACK_IMPORTED_MODULE_3__["QRCodeService"] },
-    { type: _services__WEBPACK_IMPORTED_MODULE_2__["CategoryService"] },
-    { type: _services__WEBPACK_IMPORTED_MODULE_2__["NotifierService"] },
-    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
-    { type: ngx_order_pipe__WEBPACK_IMPORTED_MODULE_7__["OrderPipe"] }
-];
-CategoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-category',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./category.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/category.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./category.component.css */ "./src/app/pages/manager/category/category.component.css")).default]
-    })
-], CategoryComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/dialog/create-category/create-category.component.css":
-/*!*********************************************************************************************!*\
-  !*** ./src/app/pages/manager/category/dialog/create-category/create-category.component.css ***!
-  \*********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("@media (min-width: 1000px) {\r\n    .modal-xl {\r\n        max-width: 540px;\r\n    }\r\n}\r\n\r\n.modal-title {\r\n    color: rgb(6, 138, 199);\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbWFuYWdlci9jYXRlZ29yeS9kaWFsb2cvY3JlYXRlLWNhdGVnb3J5L2NyZWF0ZS1jYXRlZ29yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0k7UUFDSSxnQkFBZ0I7SUFDcEI7QUFDSjs7QUFFQTtJQUNJLHVCQUF1QjtJQUN2QixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9tYW5hZ2VyL2NhdGVnb3J5L2RpYWxvZy9jcmVhdGUtY2F0ZWdvcnkvY3JlYXRlLWNhdGVnb3J5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAbWVkaWEgKG1pbi13aWR0aDogMTAwMHB4KSB7XHJcbiAgICAubW9kYWwteGwge1xyXG4gICAgICAgIG1heC13aWR0aDogNTQwcHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5tb2RhbC10aXRsZSB7XHJcbiAgICBjb2xvcjogcmdiKDYsIDEzOCwgMTk5KTtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59Il19 */");
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/dialog/create-category/create-category.component.ts":
-/*!********************************************************************************************!*\
-  !*** ./src/app/pages/manager/category/dialog/create-category/create-category.component.ts ***!
-  \********************************************************************************************/
-/*! exports provided: CreateCategoryComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateCategoryComponent", function() { return CreateCategoryComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/_services */ "./src/app/_services/index.ts");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services */ "./src/app/pages/manager/category/services/index.ts");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _models_qrcode_model__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/qrcode.model */ "./src/app/pages/manager/category/models/qrcode.model.ts");
-
-
-
-
-
-
-
-let CreateCategoryComponent = class CreateCategoryComponent {
-    constructor(categoryVMService, formBuilder, notifierService, 
-    // private qRCodeComponent: QRCodeComponent,
-    dialogRef, data) {
-        this.categoryVMService = categoryVMService;
-        this.formBuilder = formBuilder;
-        this.notifierService = notifierService;
-        this.dialogRef = dialogRef;
-        this.submitted = false;
-        this.formDanhMuc = this.formBuilder.group({
-            danhmuc_id: [data.danhmuc_id],
-            ma_an_chi: [data.ma_an_chi, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            loai_acqt: [data.loai_acqt, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            kyhieu: [data.kyhieu, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            donvitinh: [data.donvitinh, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            sldonggoi: [data.sldonggoi, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            sldongthung: [data.sldongthung, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            status: data.status
-        });
-    }
-    ngOnInit() {
-    }
-    get MassageErrorForm() { return this.formDanhMuc.controls; }
-    onClose() {
-        this.dialogRef.close();
-    }
-    // get getMaACQT() { return this.formDanhMuc.get('ma_an_chi'); };
-    // get getLoaiACQT() { return this.formDanhMuc.get('loai_acqt'); };
-    // get getKyHieu() { return this.formDanhMuc.get('kyhieu'); };
-    // get getDVT() { return this.formDanhMuc.get('donvitinh'); };
-    // get getSLDongGoi() { return this.formDanhMuc.get('sldonggoi'); };
-    // get getSLDongThung() { return this.formDanhMuc.get('sldongthung'); };
-    keyDownFunction(e) {
-        try {
-            if (e.keyCode === 13) {
-                document.getElementById("btnSave").click();
-            }
-        }
-        catch (e) {
-        }
-    }
-    onSave(formDanhMuc) {
-        this.submitted = true;
-        if (this.formDanhMuc.invalid) {
-            return;
-        }
-        formDanhMuc.status = "Chưa Duyệt";
-        this.categoryVMService.InsertDanhMuc_VM(formDanhMuc)
-            .subscribe(data => {
-            if (data.code == "200") {
-                // show message success
-                this.notifierService.success("Thông báo", "Thêm danh mục thành công!");
-                this.message = data.message;
-                this.onClose();
-            }
-            else {
-                this.message = data.message;
-                this.notifierService.error("Thông báo", data.message);
-            }
-        });
-    }
-};
-CreateCategoryComponent.ctorParameters = () => [
-    { type: _services__WEBPACK_IMPORTED_MODULE_3__["QRCodeService"] },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"] },
-    { type: _services__WEBPACK_IMPORTED_MODULE_2__["NotifierService"] },
-    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"] },
-    { type: _models_qrcode_model__WEBPACK_IMPORTED_MODULE_6__["Reflist"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"],] }] }
-];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], CreateCategoryComponent.prototype, "id", void 0);
-CreateCategoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-category.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/dialog/create-category/create-category.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-category.component.css */ "./src/app/pages/manager/category/dialog/create-category/create-category.component.css")).default]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"]))
-], CreateCategoryComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/dialog/detail-category/detail-category.component.css":
-/*!*********************************************************************************************!*\
-  !*** ./src/app/pages/manager/category/dialog/detail-category/detail-category.component.css ***!
-  \*********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("@media (min-width: 1000px) {\r\n    .modal-xl {\r\n        max-width: 540px;\r\n    }\r\n}\r\n\r\n.modal-title {\r\n    color: rgb(6, 138, 199);\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbWFuYWdlci9jYXRlZ29yeS9kaWFsb2cvZGV0YWlsLWNhdGVnb3J5L2RldGFpbC1jYXRlZ29yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0k7UUFDSSxnQkFBZ0I7SUFDcEI7QUFDSjs7QUFFQTtJQUNJLHVCQUF1QjtJQUN2QixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9tYW5hZ2VyL2NhdGVnb3J5L2RpYWxvZy9kZXRhaWwtY2F0ZWdvcnkvZGV0YWlsLWNhdGVnb3J5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAbWVkaWEgKG1pbi13aWR0aDogMTAwMHB4KSB7XHJcbiAgICAubW9kYWwteGwge1xyXG4gICAgICAgIG1heC13aWR0aDogNTQwcHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5tb2RhbC10aXRsZSB7XHJcbiAgICBjb2xvcjogcmdiKDYsIDEzOCwgMTk5KTtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59Il19 */");
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/dialog/detail-category/detail-category.component.ts":
-/*!********************************************************************************************!*\
-  !*** ./src/app/pages/manager/category/dialog/detail-category/detail-category.component.ts ***!
-  \********************************************************************************************/
-/*! exports provided: DetailCategoryComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailCategoryComponent", function() { return DetailCategoryComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/_services */ "./src/app/_services/index.ts");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services */ "./src/app/pages/manager/category/services/index.ts");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _models_qrcode_model__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/qrcode.model */ "./src/app/pages/manager/category/models/qrcode.model.ts");
-
-
-
-
-
-
-
-let DetailCategoryComponent = class DetailCategoryComponent {
-    constructor(categoryVMService, formBuilder, notifierService, dialogRef, data) {
-        this.categoryVMService = categoryVMService;
-        this.formBuilder = formBuilder;
-        this.notifierService = notifierService;
-        this.dialogRef = dialogRef;
-        this.submitted = false;
-        this.data = data;
-        this.formDanhMuc = this.formBuilder.group({
-            danhmuc_id: [data.danhmuc_id],
-            loai_acqt: [data.loai_acqt, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            kyhieu: [data.kyhieu, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            donvitinh: [data.donvitinh, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            sldonggoi: [data.sldonggoi, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            sldongthung: [data.sldongthung, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            status: data.status
-        });
-    }
-    ngOnInit() {
-    }
-    get MassageErrorForm() { return this.formDanhMuc.controls; }
-    onClose() {
-        this.dialogRef.close();
-    }
-};
-DetailCategoryComponent.ctorParameters = () => [
-    { type: _services__WEBPACK_IMPORTED_MODULE_3__["QRCodeService"] },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"] },
-    { type: _services__WEBPACK_IMPORTED_MODULE_2__["NotifierService"] },
-    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"] },
-    { type: _models_qrcode_model__WEBPACK_IMPORTED_MODULE_6__["Reflist"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"],] }] }
-];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], DetailCategoryComponent.prototype, "id", void 0);
-DetailCategoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./detail-category.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/dialog/detail-category/detail-category.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./detail-category.component.css */ "./src/app/pages/manager/category/dialog/detail-category/detail-category.component.css")).default]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"]))
-], DetailCategoryComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/dialog/edit-category/edit-category.component.css":
-/*!*****************************************************************************************!*\
-  !*** ./src/app/pages/manager/category/dialog/edit-category/edit-category.component.css ***!
-  \*****************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("@media (min-width: 1000px) {\r\n    .modal-xl {\r\n        max-width: 540px;\r\n    }\r\n}\r\n\r\n.modal-title {\r\n    color: rgb(6, 138, 199);\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbWFuYWdlci9jYXRlZ29yeS9kaWFsb2cvZWRpdC1jYXRlZ29yeS9lZGl0LWNhdGVnb3J5LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSTtRQUNJLGdCQUFnQjtJQUNwQjtBQUNKOztBQUVBO0lBQ0ksdUJBQXVCO0lBQ3ZCLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL21hbmFnZXIvY2F0ZWdvcnkvZGlhbG9nL2VkaXQtY2F0ZWdvcnkvZWRpdC1jYXRlZ29yeS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQG1lZGlhIChtaW4td2lkdGg6IDEwMDBweCkge1xyXG4gICAgLm1vZGFsLXhsIHtcclxuICAgICAgICBtYXgtd2lkdGg6IDU0MHB4O1xyXG4gICAgfVxyXG59XHJcblxyXG4ubW9kYWwtdGl0bGUge1xyXG4gICAgY29sb3I6IHJnYig2LCAxMzgsIDE5OSk7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufSJdfQ== */");
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/dialog/edit-category/edit-category.component.ts":
-/*!****************************************************************************************!*\
-  !*** ./src/app/pages/manager/category/dialog/edit-category/edit-category.component.ts ***!
-  \****************************************************************************************/
-/*! exports provided: EditCategoryComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditCategoryComponent", function() { return EditCategoryComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/_services */ "./src/app/_services/index.ts");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services */ "./src/app/pages/manager/category/services/index.ts");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _models_qrcode_model__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/qrcode.model */ "./src/app/pages/manager/category/models/qrcode.model.ts");
-
-
-
-
-
-
-
-let EditCategoryComponent = class EditCategoryComponent {
-    constructor(categoryVMService, formBuilder, notifierService, 
-    // private qRCodeComponent: QRCodeComponent,
-    dialogRef, data) {
-        this.categoryVMService = categoryVMService;
-        this.formBuilder = formBuilder;
-        this.notifierService = notifierService;
-        this.dialogRef = dialogRef;
-        this.submitted = false;
-        this.data = data;
-        if (data.action == "Cập nhật") {
-            this.temp = false;
-        }
-        else {
-            this.temp = true;
-        }
-        this.formDanhMuc = this.formBuilder.group({
-            danhmuc_id: [data.danhmuc_id],
-            loai_acqt: [data.loai_acqt, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            kyhieu: [data.kyhieu, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            donvitinh: [data.donvitinh, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required
-                ])],
-            sldonggoi: [data.sldonggoi, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required,
-                    this.validateNumberOf
-                ])],
-            sldongthung: [data.sldongthung, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].compose([
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required,
-                    this.validateNumberOf
-                ])],
-            status: data.status
-        });
-    }
-    ngOnInit() {
-    }
-    get MassageErrorForm() { return this.formDanhMuc.controls; }
-    onClose() {
-        this.dialogRef.close();
-    }
-    validateNumberOf(controls) {
-        var regex = /^[0-9]+$/;
-        if (String(controls.value).match(regex)) {
-            return null;
-        }
-        else {
-            return { 'validateNumberOf': true };
-        }
-    }
-    keyDownFunction(e) {
-        try {
-            if (e.keyCode === 13) {
-                document.getElementById("btnSave").click();
-            }
-        }
-        catch (e) {
-        }
-    }
-    onSave(formDanhMuc) {
-        this.submitted = true;
-        if (this.formDanhMuc.invalid) {
-            return;
-        }
-        this.categoryVMService.updateByIdDanhMuc_VM(formDanhMuc)
-            .subscribe(data => {
-            if (data.presult == 1) {
-                // show message success
-                this.message = data.message;
-                this.notifierService.success("Thông báo", "Cập nhật danh mục thành công!");
-                this.onClose();
-                // this.qRCodeComponent.ngOnInit();
-            }
-            else {
-                // Insert thất bại
-                this.message = data.message;
-                this.notifierService.error("Thông báo", data.message);
-            }
-        });
-    }
-    onDelete(form) {
-        this.categoryVMService.deleteByIdDanhMuc_VM(form.danhmuc_id)
-            .subscribe(data => {
-            if (data == null) {
-                // Insert thất bại
-            }
-            else {
-                // show message success
-                this.onClose();
-            }
-        });
-    }
-};
-EditCategoryComponent.ctorParameters = () => [
-    { type: _services__WEBPACK_IMPORTED_MODULE_3__["QRCodeService"] },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"] },
-    { type: _services__WEBPACK_IMPORTED_MODULE_2__["NotifierService"] },
-    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"] },
-    { type: _models_qrcode_model__WEBPACK_IMPORTED_MODULE_6__["Reflist"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"],] }] }
-];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], EditCategoryComponent.prototype, "id", void 0);
-EditCategoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./edit-category.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/manager/category/dialog/edit-category/edit-category.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./edit-category.component.css */ "./src/app/pages/manager/category/dialog/edit-category/edit-category.component.css")).default]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"]))
-], EditCategoryComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/dialog/index.ts":
-/*!********************************************************!*\
-  !*** ./src/app/pages/manager/category/dialog/index.ts ***!
-  \********************************************************/
-/*! exports provided: EditCategoryComponent, DetailCategoryComponent, CreateCategoryComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _edit_category_edit_category_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit-category/edit-category.component */ "./src/app/pages/manager/category/dialog/edit-category/edit-category.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EditCategoryComponent", function() { return _edit_category_edit_category_component__WEBPACK_IMPORTED_MODULE_1__["EditCategoryComponent"]; });
-
-/* harmony import */ var _detail_category_detail_category_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./detail-category/detail-category.component */ "./src/app/pages/manager/category/dialog/detail-category/detail-category.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DetailCategoryComponent", function() { return _detail_category_detail_category_component__WEBPACK_IMPORTED_MODULE_2__["DetailCategoryComponent"]; });
-
-/* harmony import */ var _create_category_create_category_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./create-category/create-category.component */ "./src/app/pages/manager/category/dialog/create-category/create-category.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CreateCategoryComponent", function() { return _create_category_create_category_component__WEBPACK_IMPORTED_MODULE_3__["CreateCategoryComponent"]; });
-
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/models/qrcode.model.ts":
-/*!***************************************************************!*\
-  !*** ./src/app/pages/manager/category/models/qrcode.model.ts ***!
-  \***************************************************************/
-/*! exports provided: DanhMuc_VMModel, Reflist */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DanhMuc_VMModel", function() { return DanhMuc_VMModel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Reflist", function() { return Reflist; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class DanhMuc_VMModel {
-}
-class Reflist {
-}
-
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/services/index.ts":
-/*!**********************************************************!*\
-  !*** ./src/app/pages/manager/category/services/index.ts ***!
-  \**********************************************************/
-/*! exports provided: QRCodeService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _qrcode_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./qrcode.service */ "./src/app/pages/manager/category/services/qrcode.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "QRCodeService", function() { return _qrcode_service__WEBPACK_IMPORTED_MODULE_1__["QRCodeService"]; });
-
-
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/category/services/qrcode.service.ts":
-/*!*******************************************************************!*\
-  !*** ./src/app/pages/manager/category/services/qrcode.service.ts ***!
-  \*******************************************************************/
-/*! exports provided: QRCodeService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QRCodeService", function() { return QRCodeService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-
-
-
-
-
-let QRCodeService = class QRCodeService {
-    constructor(http) {
-        this.http = http;
-    }
-    getByIdDanhMuc_VM() {
-        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}/DanhMuc_VM/getByIdDanhMuc_VM`, {})
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(data => {
-            return data;
-        }));
-    }
-    GetAllCategory_VM(request) {
-        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}/category/getcategory`, request)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(data => {
-            return data;
-        }));
-    }
-    InsertDanhMuc_VM(request) {
-        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}/category/Insert`, request)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(data => {
-            return data;
-        }));
-    }
-    updateByIdDanhMuc_VM(request) {
-        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}/category/update`, request)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(data => {
-            return data;
-        }));
-    }
-    // deleteByIdDanhMuc_VM (id): Observable<{}> {
-    //     const url = `${environment.apiUrl}/DanhMuc_VM/deleteByIdDanhMuc_VM?danhmuc_id=${id}`; // DELETE api/heroes/42
-    //     return this.http.delete(url)
-    //       .pipe(map(data => {
-    //         return data;
-    //     })
-    //       );
-    //   }
-    deleteByIdDanhMuc_VM(id) {
-        const url = `${_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}/category/delete?danhmuc_id=${id}`; // DELETE api/heroes/42
-        return this.http.post(url, { id })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(data => {
-            return data;
-        }));
-    }
-};
-QRCodeService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
-QRCodeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({ providedIn: 'root' })
-], QRCodeService);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/manager/manager-routing.module.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/pages/manager/manager-routing.module.ts ***!
-  \*********************************************************/
+/***/ "./src/app/pages/customer-page/customer-routing.module.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/pages/customer-page/customer-routing.module.ts ***!
+  \****************************************************************/
 /*! exports provided: ManagerRoutingModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7766,7 +6995,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/_helpers */ "./src/app/_helpers/index.ts");
-/* harmony import */ var _category_category_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./category/category.component */ "./src/app/pages/manager/category/category.component.ts");
+/* harmony import */ var _product_product_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./product/product.component */ "./src/app/pages/customer-page/product/product.component.ts");
 
 
 
@@ -7777,7 +7006,7 @@ const routes = [
     {
         path: '',
         children: [
-            { path: 'tally/category', component: _category_category_component__WEBPACK_IMPORTED_MODULE_4__["CategoryComponent"], canActivate: [_helpers__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
+            { path: 'product', component: _product_product_component__WEBPACK_IMPORTED_MODULE_4__["ProductComponent"], canActivate: [_helpers__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
         ]
     }
 ];
@@ -7794,16 +7023,16 @@ ManagerRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/pages/manager/manager.module.ts":
-/*!*************************************************!*\
-  !*** ./src/app/pages/manager/manager.module.ts ***!
-  \*************************************************/
-/*! exports provided: ManagerModule */
+/***/ "./src/app/pages/customer-page/customer.module.ts":
+/*!********************************************************!*\
+  !*** ./src/app/pages/customer-page/customer.module.ts ***!
+  \********************************************************/
+/*! exports provided: CustomerModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagerModule", function() { return ManagerModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerModule", function() { return CustomerModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
@@ -7813,14 +7042,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ng2_currency_mask__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ng2-currency-mask */ "./node_modules/ng2-currency-mask/index.js");
 /* harmony import */ var ng2_currency_mask__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(ng2_currency_mask__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ng-select/ng-select */ "./node_modules/@ng-select/ng-select/fesm2015/ng-select-ng-select.js");
-/* harmony import */ var _manager_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./manager-routing.module */ "./src/app/pages/manager/manager-routing.module.ts");
+/* harmony import */ var _customer_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./customer-routing.module */ "./src/app/pages/customer-page/customer-routing.module.ts");
 /* harmony import */ var _components_alert_alert_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/_components/alert/alert.module */ "./src/app/_components/alert/alert.module.ts");
 /* harmony import */ var ng2_file_upload__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ng2-file-upload */ "./node_modules/ng2-file-upload/fesm2015/ng2-file-upload.js");
 /* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm2015/ngx-spinner.js");
 /* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/fesm2015/ngx-order-pipe.js");
 /* harmony import */ var ngx_loading__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-loading */ "./node_modules/ngx-loading/fesm2015/ngx-loading.js");
 /* harmony import */ var angular_confirmation_popover__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! angular-confirmation-popover */ "./node_modules/angular-confirmation-popover/fesm2015/angular-confirmation-popover.js");
-/* harmony import */ var _category_category_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./category/category.component */ "./src/app/pages/manager/category/category.component.ts");
+/* harmony import */ var _product_product_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./product/product.component */ "./src/app/pages/customer-page/product/product.component.ts");
 
 
 
@@ -7838,9 +7067,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let ManagerModule = class ManagerModule {
+let CustomerModule = class CustomerModule {
 };
-ManagerModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+CustomerModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [
             ngx_order_pipe__WEBPACK_IMPORTED_MODULE_12__["OrderModule"],
@@ -7848,7 +7077,7 @@ ManagerModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             ng2_currency_mask__WEBPACK_IMPORTED_MODULE_6__["CurrencyMaskModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _modules_material_module__WEBPACK_IMPORTED_MODULE_4__["MaterialModule"],
-            _manager_routing_module__WEBPACK_IMPORTED_MODULE_8__["ManagerRoutingModule"],
+            _customer_routing_module__WEBPACK_IMPORTED_MODULE_8__["ManagerRoutingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
             ng2_search_filter__WEBPACK_IMPORTED_MODULE_5__["Ng2SearchPipeModule"],
             ng2_file_upload__WEBPACK_IMPORTED_MODULE_10__["FileUploadModule"],
@@ -7868,15 +7097,15 @@ ManagerModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ],
         exports: [
             // RoleComponent,
-            _category_category_component__WEBPACK_IMPORTED_MODULE_15__["CategoryComponent"],
+            _product_product_component__WEBPACK_IMPORTED_MODULE_15__["ProductComponent"],
         ],
         declarations: [
             // RoleComponent,
-            _category_category_component__WEBPACK_IMPORTED_MODULE_15__["CategoryComponent"],
+            _product_product_component__WEBPACK_IMPORTED_MODULE_15__["ProductComponent"],
         ],
         entryComponents: []
     })
-], ManagerModule);
+], CustomerModule);
 
 
 
