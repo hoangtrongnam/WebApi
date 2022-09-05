@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Data;
-using System.Data.OracleClient;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using WebApi.Persistence;
 
@@ -23,20 +23,20 @@ namespace WebApi.Services.AccountingService
         public async Task<bool> Login(string userId, string Pass)
         {
             var connection = _conn.ToString();
-            using (OracleConnection _oracleConnection = new OracleConnection(connection))
+            using (SqlConnection _oracleConnection = new SqlConnection(connection))
             {
                 _oracleConnection.Open();
-                var cmd = new OracleCommand("ACCOUNT_PKG.GET_ACCOUNT_ID", _oracleConnection);
+                var cmd = new SqlCommand("ACCOUNT_PKG.GET_ACCOUNT_ID", _oracleConnection);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                var p_user_name = new OracleParameter("p_user_name", OracleType.Cursor);
-                var p_pass = new OracleParameter("p_pass", OracleType.Cursor);
-                var p_reflist = new OracleParameter("p_reflist", OracleType.Cursor);
+                //var p_user_name = new OParameter("p_user_name", OracleType.Cursor);
+                //var p_pass = new OracleParameter("p_pass", OracleType.Cursor);
+                //var p_reflist = new OracleParameter("p_reflist", OracleType.Cursor);
 
 
-                cmd.Parameters.Add(p_user_name).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(p_pass).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(p_reflist).Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add(p_user_name).Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add(p_pass).Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add(p_reflist).Direction = ParameterDirection.Output;
                 cmd.Transaction = _oracleConnection.BeginTransaction();
                 try
                 {
@@ -44,7 +44,7 @@ namespace WebApi.Services.AccountingService
                     var result = await cmd.ExecuteNonQueryAsync();
                     cmd.Transaction.Commit();
                 }
-                catch (OracleException ex)
+                catch (SqlException ex)
                 {
                     cmd.Transaction.Rollback();
                 }

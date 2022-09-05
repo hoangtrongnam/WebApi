@@ -1,0 +1,5 @@
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\netcoreapp3.1\Web.Common.csproj.AssemblyReference.cache
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\netcoreapp3.1\Web.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\netcoreapp3.1\Web.Common.AssemblyInfoInputs.cache
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\netcoreapp3.1\Web.Common.AssemblyInfo.cs
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\netcoreapp3.1\Web.Common.csproj.CoreCompileInputs.cache

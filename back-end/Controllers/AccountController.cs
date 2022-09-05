@@ -40,7 +40,7 @@ namespace WebApi.Controllers
                 if (userName == "namht1")
                 {
                     postion.Id = "208";
-                    postion.UserId = "SCB Nguyễn Sơn";
+                    postion.UserId = "Nguyễn Sơn";
                     postion.Pass = "";
                 }
                 

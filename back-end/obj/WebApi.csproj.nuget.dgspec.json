@@ -1,31 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "D:\\source\\Angular\\WebApi\\back-end\\WebApi.csproj": {}
+    "D:\\Nam\\Project\\WebApi\\back-end\\WebApi.csproj": {}
   },
   "projects": {
-    "D:\\source\\Angular\\WebApi\\back-end\\WebApi.csproj": {
+    "D:\\Nam\\Project\\WebApi\\back-end\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\source\\Angular\\WebApi\\back-end\\WebApi.csproj",
+        "projectUniqueName": "D:\\Nam\\Project\\WebApi\\back-end\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "D:\\source\\Angular\\WebApi\\back-end\\WebApi.csproj",
+        "projectPath": "D:\\Nam\\Project\\WebApi\\back-end\\WebApi.csproj",
         "packagesPath": "C:\\Users\\namco\\.nuget\\packages\\",
-        "outputPath": "D:\\source\\Angular\\WebApi\\back-end\\obj\\",
+        "outputPath": "D:\\Nam\\Project\\WebApi\\back-end\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\namco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -36,51 +41,52 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Aspose.Cells": {
               "target": "Package",
-              "version": "[21.1.0, )"
+              "version": "[22.8.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.1.11, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
-              "version": "[4.2.0, )"
+              "version": "[5.0.0, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[6.8.0, )"
+              "version": "[6.22.1, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.10.9, )"
+              "version": "[1.17.0, )"
             },
             "NLog": {
               "target": "Package",
-              "version": "[4.7.7, )"
-            },
-            "Oracle.ManagedDataAccess": {
-              "target": "Package",
-              "version": "[19.10.1, )"
+              "version": "[5.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[6.4.0, )"
             },
             "Swashbuckle.AspNetCore.Newtonsoft": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[6.4.0, )"
             },
-            "System.Data.OracleClient": {
+            "Swashbuckle.AspNetCore.SwaggerGen": {
               "target": "Package",
-              "version": "[1.0.8, )"
+              "version": "[6.4.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
             }
           },
           "imports": [
@@ -101,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

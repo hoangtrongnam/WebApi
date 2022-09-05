@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "34233aa0-a249-484a-a1af-202926b81f8a": {
+      "ProjectGuid": "34233aa0-a249-484a-a1af-202926b81f8a",
+      "DisplayName": "Web.Common",
+      "ColorIndex": 0
+    },
+    "e4bb446d-3689-49f4-9be9-356e7c1ba7dc": {
+      "ProjectGuid": "e4bb446d-3689-49f4-9be9-356e7c1ba7dc",
+      "DisplayName": "WebApi",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "f5b3ef75-c2f6-447e-a5f6-c07f3a379b06": {
+      "ProjectGuid": "f5b3ef75-c2f6-447e-a5f6-c07f3a379b06",
+      "DisplayName": "Web.DataAccess",
+      "ColorIndex": 2
+    },
+    "5a8b2bba-58d8-47cc-a646-fd3e4f88c456": {
+      "ProjectGuid": "5a8b2bba-58d8-47cc-a646-fd3e4f88c456",
+      "DisplayName": "Web.DataAccess",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

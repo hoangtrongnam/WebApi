@@ -1,0 +1,11 @@
+D:\Nam\Project\WebApi\Web.Common\bin\Debug\net6.0\Web.Common.deps.json
+D:\Nam\Project\WebApi\Web.Common\bin\Debug\net6.0\Web.Common.dll
+D:\Nam\Project\WebApi\Web.Common\bin\Debug\net6.0\ref\Web.Common.dll
+D:\Nam\Project\WebApi\Web.Common\bin\Debug\net6.0\Web.Common.pdb
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\net6.0\Web.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\net6.0\Web.Common.AssemblyInfoInputs.cache
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\net6.0\Web.Common.AssemblyInfo.cs
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\net6.0\Web.Common.csproj.CoreCompileInputs.cache
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\net6.0\Web.Common.dll
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\net6.0\ref\Web.Common.dll
+D:\Nam\Project\WebApi\Web.Common\obj\Debug\net6.0\Web.Common.pdb
