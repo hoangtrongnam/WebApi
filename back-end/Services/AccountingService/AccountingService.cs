@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Data;
-using System.Data.OracleClient;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using WebApi.Persistence;
 
@@ -22,29 +22,40 @@ namespace WebApi.Services.AccountingService
 
         public async Task<bool> Login(string userId, string Pass)
         {
-            var connection = _conn.ToString();
-            using (OracleConnection _oracleConnection = new OracleConnection(connection))
+            var connection = _conn.ConnectionString.ToString();
+            using (SqlConnection _oracleConnection = new SqlConnection(connection))
             {
                 _oracleConnection.Open();
-                var cmd = new OracleCommand("ACCOUNT_PKG.GET_ACCOUNT_ID", _oracleConnection);
-                cmd.CommandType = CommandType.StoredProcedure;
+                var cmd = new SqlCommand(@"SELECT TOP (1000) [Id]
+                                          ,[Name]
+                                          ,[Description]
+                                          ,[Price]
+                                          ,[PictureUrl]
+                                          ,[ProductTypeId]
+                                          ,[ProductBrandId]
+                                      FROM[Ecommerce].[dbo].[Products]", _oracleConnection);
 
-                var p_user_name = new OracleParameter("p_user_name", OracleType.Cursor);
-                var p_pass = new OracleParameter("p_pass", OracleType.Cursor);
-                var p_reflist = new OracleParameter("p_reflist", OracleType.Cursor);
-
-
-                cmd.Parameters.Add(p_user_name).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(p_pass).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(p_reflist).Direction = ParameterDirection.Output;
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.Add(new SqlParameter("@EmployeeID", employeeID));
+                //cmd.CommandTimeout = 5;
                 cmd.Transaction = _oracleConnection.BeginTransaction();
+                var t = "";
                 try
                 {
                     // Assign value here, AFTER starting the TX
-                    var result = await cmd.ExecuteNonQueryAsync();
-                    cmd.Transaction.Commit();
+                    //var result = await cmd.ExecuteNonQueryAsync();
+                    var result = cmd.ExecuteReader();
+#if true
+                    if (result.Read())
+                    {
+                        t = result.GetGuid(0).ToString();
+                        t = result.GetString(1).ToString();
+                        t = result.GetString(2).ToString();
+                    }
+#endif
+                    //cmd.Transaction.Commit();
                 }
-                catch (OracleException ex)
+                catch (SqlException ex)
                 {
                     cmd.Transaction.Rollback();
                 }
